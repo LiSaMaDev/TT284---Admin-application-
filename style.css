@@ -43,3 +43,75 @@ main {
 h2 {
     margin-top: 0;
 }
+
+label {
+    margin-top: 10px;
+}
+
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex: 1 1 calc(50% - 20px);
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.form-buttons button{
+    margin-left: 10px;
+}
+
+button[type="cancel"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #2c2300;
+    border: none;
+    background-color: #f5f0ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="cancel"]:hover {
+    background-color: #c2a4ff;
+    color: #FFFCF0;
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #ffe47a;
+    color: #2c2300;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    color: #FFFCF0;
+    background-color: #c2a4ff;
+}
+
+input, select, textarea {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #c2a4ff;
+    border-radius: 4px;
+}
+

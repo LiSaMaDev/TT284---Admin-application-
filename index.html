@@ -8,13 +8,70 @@
 </head>
 <body>
     <header>
+        <h3>Sullivan Dolores</h3>
         <h1>Administration application's board</h1>
-        <button id="logout" onclick="logout()">Log out</button>
+        <button id="logout">Log out</button>
     </header>
     <main>
         <h2>New event</h2>
         <form method="POST" action="https://students.open.ac.uk/mct/tt284/reflect/reflect.php">
-<!-- The form -->
+            <div class="aside aside1">
+
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="type">Type*</label>
+            <select id="type" name="type" required>
+                <option value="">Select Type</option>
+                <option value="Ride_event">Ride event</option>
+                <option value="Other_event">Other event</option>
+            </select>
+            
+            <label for="date">Date*</label>
+            <input type="datetime-local" id="date" name="date" required>
+
+            <label for="duration">Duration (in hours)*</label>
+            <input type="number" id="duration" name="duration" min="0" step="0.1" required>
+            
+            <label for="meeting-point">Meeting point*</label>
+            <input type="text" id="meeting-point" name="meeting_point" required>
+            
+            <label for="distance">Distance (in KM)</label>
+            <input type="number" id="distance" name="distance" step="0.1">
+            
+            <label for="elevation">Elevation (in m)</label>
+            <input type="number" id="elevation" name="elevation" step="0.1">
+            
+            <label for="max-group-size">Maximum group size</label>
+            <input type="number" id="max-group-size" name="max_group_size">
+            
+            <label for="leader-name">Name of the leader</label>
+            <input type="text" id="leader-name" name="leader_name">
+            
+            <label for="contact-number">Contact number</label>
+            <input type="tel" id="contact-number" name="contact_number">
+            
+            <label for="alternative-number">Alternative number</label>
+            <input type="tel" id="alternative-number" name="alternative_number">
+        </div>
+        <div class="aside aside1">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="Proposed">Planned</option>
+                <option value="Approved">Confirmed</option>
+                <option value="Rejected">Completed</option>
+            </select>
+            
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+            
+            <input type="hidden" name="SessionIdentifier" value="ff53-dd45-dcba9876-9090">
+            
+            <div class="form-buttons">
+                <button type="submit">Create</button>
+                <button type="cancel">Cancel</button>
+            </div>
+        </div>
         </form>
     </main>
 </body>

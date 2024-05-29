@@ -73,7 +73,7 @@
             <label for="alternative-number">Alternative number</label>
             <input type="tel" id="alternative-number" name="alternative_number">
             <div class="form-group">
-                
+
             </div>
             <label for="status">Status</label>
             <select id="status" name="status">
@@ -97,6 +97,36 @@
                 <button type="cancel">Cancel</button>
             </div>
         </form>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const typeField = document.getElementById("type");
+            const formFields = document.querySelectorAll("input, select, textarea");
+            
+            const updateFields = () => {
+                const typeValue = typeField.value;
+                formFields.forEach(field => {
+                    if (field.id === "name" || field.id === "type") {
+                        field.disabled = false;
+                    } else if (typeValue === "Ride_event") {
+                        field.disabled = false;
+                    } else if (typeValue === "Other_event") {
+                        if (["date", "duration", "meeting-point"].includes(field.id)) {
+                            field.disabled = false;
+                        } else {
+                            field.disabled = true;
+                        }
+                    } else {
+                        field.disabled = true;
+                    }
+                });
+            };
+
+            typeField.addEventListener("change", updateFields);
+            updateFields(); // Initial call to set the correct fields on page load
+        });
+
+        </script>
     </main>
 </body>
 </html>
